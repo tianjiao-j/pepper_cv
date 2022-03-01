@@ -19,14 +19,19 @@ set(CMAKE_MAKEFILE_DEPENDS
   "face_recognizer/catkin_generated/package.cmake"
   "object_detector/catkin_generated/ordered_paths.cmake"
   "object_detector/catkin_generated/package.cmake"
+  "photo_collector/catkin_generated/ordered_paths.cmake"
+  "photo_collector/catkin_generated/package.cmake"
   "/home/crossing/pepper_cv/src/CMakeLists.txt"
   "/home/crossing/pepper_cv/src/face_detector/CMakeLists.txt"
   "/home/crossing/pepper_cv/src/face_detector/package.xml"
   "/home/crossing/pepper_cv/src/face_recognizer/CMakeLists.txt"
   "/home/crossing/pepper_cv/src/face_recognizer/package.xml"
+  "/home/crossing/pepper_cv/src/face_recognizer/scripts/face_recog.py"
   "/home/crossing/pepper_cv/src/object_detector/CMakeLists.txt"
   "/home/crossing/pepper_cv/src/object_detector/package.xml"
   "/home/crossing/pepper_cv/src/object_detector/scripts/yolo_obj_detection.py"
+  "/home/crossing/pepper_cv/src/photo_collector/CMakeLists.txt"
+  "/home/crossing/pepper_cv/src/photo_collector/package.xml"
   "/opt/ros/melodic/share/catkin/cmake/../package.xml"
   "/opt/ros/melodic/share/catkin/cmake/all.cmake"
   "/opt/ros/melodic/share/catkin/cmake/assert.cmake"
@@ -186,6 +191,7 @@ set(CMAKE_MAKEFILE_PRODUCTS
   "face_detector/CMakeFiles/CMakeDirectoryInformation.cmake"
   "face_recognizer/CMakeFiles/CMakeDirectoryInformation.cmake"
   "object_detector/CMakeFiles/CMakeDirectoryInformation.cmake"
+  "photo_collector/CMakeFiles/CMakeDirectoryInformation.cmake"
   )
 
 # Dependency information for all targets:

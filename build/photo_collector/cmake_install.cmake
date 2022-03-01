@@ -1,4 +1,4 @@
-# Install script for directory: /home/crossing/pepper_cv/src/face_recognizer
+# Install script for directory: /home/crossing/pepper_cv/src/photo_collector
 
 # Set the install prefix
 if(NOT DEFINED CMAKE_INSTALL_PREFIX)
@@ -38,21 +38,17 @@ if(NOT DEFINED CMAKE_CROSSCOMPILING)
 endif()
 
 if("x${CMAKE_INSTALL_COMPONENT}x" STREQUAL "xUnspecifiedx" OR NOT CMAKE_INSTALL_COMPONENT)
-  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/lib/pkgconfig" TYPE FILE FILES "/home/crossing/pepper_cv/build/face_recognizer/catkin_generated/installspace/face_recognizer.pc")
+  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/lib/pkgconfig" TYPE FILE FILES "/home/crossing/pepper_cv/build/photo_collector/catkin_generated/installspace/photo_collector.pc")
 endif()
 
 if("x${CMAKE_INSTALL_COMPONENT}x" STREQUAL "xUnspecifiedx" OR NOT CMAKE_INSTALL_COMPONENT)
-  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/share/face_recognizer/cmake" TYPE FILE FILES
-    "/home/crossing/pepper_cv/build/face_recognizer/catkin_generated/installspace/face_recognizerConfig.cmake"
-    "/home/crossing/pepper_cv/build/face_recognizer/catkin_generated/installspace/face_recognizerConfig-version.cmake"
+  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/share/photo_collector/cmake" TYPE FILE FILES
+    "/home/crossing/pepper_cv/build/photo_collector/catkin_generated/installspace/photo_collectorConfig.cmake"
+    "/home/crossing/pepper_cv/build/photo_collector/catkin_generated/installspace/photo_collectorConfig-version.cmake"
     )
 endif()
 
 if("x${CMAKE_INSTALL_COMPONENT}x" STREQUAL "xUnspecifiedx" OR NOT CMAKE_INSTALL_COMPONENT)
-  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/share/face_recognizer" TYPE FILE FILES "/home/crossing/pepper_cv/src/face_recognizer/package.xml")
-endif()
-
-if("x${CMAKE_INSTALL_COMPONENT}x" STREQUAL "xUnspecifiedx" OR NOT CMAKE_INSTALL_COMPONENT)
-  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/lib/face_recognizer" TYPE PROGRAM FILES "/home/crossing/pepper_cv/build/face_recognizer/catkin_generated/installspace/face_recog.py")
+  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/share/photo_collector" TYPE FILE FILES "/home/crossing/pepper_cv/src/photo_collector/package.xml")
 endif()
 

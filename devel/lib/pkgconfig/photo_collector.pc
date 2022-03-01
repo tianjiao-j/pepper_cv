@@ -1,0 +1,8 @@
+prefix=/home/crossing/pepper_cv/devel
+
+Name: photo_collector
+Description: Description of photo_collector
+Version: 0.0.0
+Cflags: 
+Libs: -L${prefix}/lib 
+Requires: 

@@ -71,3 +71,10 @@
 /home/crossing/pepper_cv/build/object_detector/CMakeFiles/install/local.dir
 /home/crossing/pepper_cv/build/object_detector/CMakeFiles/rebuild_cache.dir
 /home/crossing/pepper_cv/build/object_detector/CMakeFiles/install.dir
+/home/crossing/pepper_cv/build/photo_collector/CMakeFiles/install/strip.dir
+/home/crossing/pepper_cv/build/photo_collector/CMakeFiles/edit_cache.dir
+/home/crossing/pepper_cv/build/photo_collector/CMakeFiles/list_install_components.dir
+/home/crossing/pepper_cv/build/photo_collector/CMakeFiles/test.dir
+/home/crossing/pepper_cv/build/photo_collector/CMakeFiles/install/local.dir
+/home/crossing/pepper_cv/build/photo_collector/CMakeFiles/rebuild_cache.dir
+/home/crossing/pepper_cv/build/photo_collector/CMakeFiles/install.dir

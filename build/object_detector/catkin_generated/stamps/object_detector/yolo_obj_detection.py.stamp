@@ -64,11 +64,11 @@ class object_detector():
 
 		classes = None
 
-		with open('./src/beginner_tutorials/scripts/yolov3.txt', 'r') as f:
+		with open('./src/object_detector/scripts/yolov3.txt', 'r') as f:
 			classes = [line.strip() for line in f.readlines()]
 
 		COLORS = np.random.uniform(0, 255, size=(len(classes), 3))
-		net = cv2.dnn.readNet('./src/beginner_tutorials/scripts/yolov3.weights', './src/beginner_tutorials/scripts/yolov3.cfg')
+		net = cv2.dnn.readNet('./src/object_detector/scripts/yolov3.weights', './src/object_detector/scripts/yolov3.cfg')
 		blob = cv2.dnn.blobFromImage(image, scale, (416, 416), (0, 0, 0), True, crop=False)
 		net.setInput(blob)
 		outs = net.forward(get_output_layers(net))

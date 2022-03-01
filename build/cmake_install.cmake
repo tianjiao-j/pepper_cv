@@ -134,6 +134,7 @@ if(NOT CMAKE_INSTALL_LOCAL_ONLY)
   include("/home/crossing/pepper_cv/build/face_detector/cmake_install.cmake")
   include("/home/crossing/pepper_cv/build/face_recognizer/cmake_install.cmake")
   include("/home/crossing/pepper_cv/build/object_detector/cmake_install.cmake")
+  include("/home/crossing/pepper_cv/build/photo_collector/cmake_install.cmake")
 
 endif()
 

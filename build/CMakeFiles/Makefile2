@@ -953,6 +953,24 @@ object_detector/preinstall:
 .PHONY : object_detector/preinstall
 
 #=============================================================================
+# Directory level rules for directory photo_collector
+
+# Convenience name for "all" pass in the directory.
+photo_collector/all:
+
+.PHONY : photo_collector/all
+
+# Convenience name for "clean" pass in the directory.
+photo_collector/clean:
+
+.PHONY : photo_collector/clean
+
+# Convenience name for "preinstall" pass in the directory.
+photo_collector/preinstall:
+
+.PHONY : photo_collector/preinstall
+
+#=============================================================================
 # Special targets to cleanup operation of make.
 
 # Special rule to run CMake to check the build system integrity.
