@@ -57,6 +57,13 @@
 /home/crossing/pepper_cv/build/face_detector/CMakeFiles/roscpp_generate_messages_nodejs.dir
 /home/crossing/pepper_cv/build/face_detector/CMakeFiles/std_msgs_generate_messages_py.dir
 /home/crossing/pepper_cv/build/face_detector/CMakeFiles/test.dir
+/home/crossing/pepper_cv/build/face_recognizer/CMakeFiles/install/strip.dir
+/home/crossing/pepper_cv/build/face_recognizer/CMakeFiles/edit_cache.dir
+/home/crossing/pepper_cv/build/face_recognizer/CMakeFiles/list_install_components.dir
+/home/crossing/pepper_cv/build/face_recognizer/CMakeFiles/test.dir
+/home/crossing/pepper_cv/build/face_recognizer/CMakeFiles/install/local.dir
+/home/crossing/pepper_cv/build/face_recognizer/CMakeFiles/rebuild_cache.dir
+/home/crossing/pepper_cv/build/face_recognizer/CMakeFiles/install.dir
 /home/crossing/pepper_cv/build/object_detector/CMakeFiles/install/strip.dir
 /home/crossing/pepper_cv/build/object_detector/CMakeFiles/edit_cache.dir
 /home/crossing/pepper_cv/build/object_detector/CMakeFiles/list_install_components.dir

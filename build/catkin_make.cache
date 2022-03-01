@@ -1,2 +1,2 @@
-face_detector:object_detector
+face_detector:face_recognizer:object_detector
 -DCATKIN_DEVEL_PREFIX=/home/crossing/pepper_cv/devel -DCMAKE_INSTALL_PREFIX=/home/crossing/pepper_cv/install -G Unix Makefiles

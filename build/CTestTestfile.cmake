@@ -6,4 +6,5 @@
 # testing this directory and lists subdirectories to be tested as well.
 subdirs("gtest")
 subdirs("face_detector")
+subdirs("face_recognizer")
 subdirs("object_detector")

@@ -15,11 +15,15 @@ set(CMAKE_MAKEFILE_DEPENDS
   "catkin_generated/order_packages.cmake"
   "face_detector/catkin_generated/ordered_paths.cmake"
   "face_detector/catkin_generated/package.cmake"
+  "face_recognizer/catkin_generated/ordered_paths.cmake"
+  "face_recognizer/catkin_generated/package.cmake"
   "object_detector/catkin_generated/ordered_paths.cmake"
   "object_detector/catkin_generated/package.cmake"
   "/home/crossing/pepper_cv/src/CMakeLists.txt"
   "/home/crossing/pepper_cv/src/face_detector/CMakeLists.txt"
   "/home/crossing/pepper_cv/src/face_detector/package.xml"
+  "/home/crossing/pepper_cv/src/face_recognizer/CMakeLists.txt"
+  "/home/crossing/pepper_cv/src/face_recognizer/package.xml"
   "/home/crossing/pepper_cv/src/object_detector/CMakeLists.txt"
   "/home/crossing/pepper_cv/src/object_detector/package.xml"
   "/home/crossing/pepper_cv/src/object_detector/scripts/yolo_obj_detection.py"
@@ -180,6 +184,7 @@ set(CMAKE_MAKEFILE_PRODUCTS
   "gtest/googlemock/CMakeFiles/CMakeDirectoryInformation.cmake"
   "gtest/googlemock/gtest/CMakeFiles/CMakeDirectoryInformation.cmake"
   "face_detector/CMakeFiles/CMakeDirectoryInformation.cmake"
+  "face_recognizer/CMakeFiles/CMakeDirectoryInformation.cmake"
   "object_detector/CMakeFiles/CMakeDirectoryInformation.cmake"
   )
 

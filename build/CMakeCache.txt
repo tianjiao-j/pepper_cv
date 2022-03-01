@@ -297,6 +297,12 @@ face_detector_BINARY_DIR:STATIC=/home/crossing/pepper_cv/build/face_detector
 face_detector_SOURCE_DIR:STATIC=/home/crossing/pepper_cv/src/face_detector
 
 //Value Computed by CMake
+face_recognizer_BINARY_DIR:STATIC=/home/crossing/pepper_cv/build/face_recognizer
+
+//Value Computed by CMake
+face_recognizer_SOURCE_DIR:STATIC=/home/crossing/pepper_cv/src/face_recognizer
+
+//Value Computed by CMake
 gmock_BINARY_DIR:STATIC=/home/crossing/pepper_cv/build/gtest/googlemock
 
 //Dependencies for the target
@@ -494,7 +500,7 @@ CMAKE_MODULE_LINKER_FLAGS_RELWITHDEBINFO-ADVANCED:INTERNAL=1
 //ADVANCED property for variable: CMAKE_NM
 CMAKE_NM-ADVANCED:INTERNAL=1
 //number of local generators
-CMAKE_NUMBER_OF_MAKEFILES:INTERNAL=6
+CMAKE_NUMBER_OF_MAKEFILES:INTERNAL=7
 //ADVANCED property for variable: CMAKE_OBJCOPY
 CMAKE_OBJCOPY-ADVANCED:INTERNAL=1
 //ADVANCED property for variable: CMAKE_OBJDUMP

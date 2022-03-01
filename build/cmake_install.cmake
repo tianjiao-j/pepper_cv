@@ -132,6 +132,7 @@ if(NOT CMAKE_INSTALL_LOCAL_ONLY)
   # Include the install script for each subdirectory.
   include("/home/crossing/pepper_cv/build/gtest/cmake_install.cmake")
   include("/home/crossing/pepper_cv/build/face_detector/cmake_install.cmake")
+  include("/home/crossing/pepper_cv/build/face_recognizer/cmake_install.cmake")
   include("/home/crossing/pepper_cv/build/object_detector/cmake_install.cmake")
 
 endif()
