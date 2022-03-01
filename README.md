@@ -1,5 +1,5 @@
 # pepper_cv
-Internship at crossing  
+Vision tasks  
   
 ## Nodes
 
