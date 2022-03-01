@@ -1,14 +1,16 @@
 # pepper_cv
 Internship at crossing  
   
-##Nodes
+## Nodes
 
-###face_detector
+### face_detector  
+detect human faces 
 
-detect human faces  
-###face_recognizer  
+### face_recognizer  
 recognize human faces with specific names  
-###object_detector  
+
+### object_detector  
 detect objects (80 classes)  
-###photo_collector  
+
+### photo_collector  
 collect photos of a person for face recognition  
