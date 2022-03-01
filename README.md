@@ -5,6 +5,9 @@ Internship at crossing
 
 ### face_detector  
 detect human faces 
+```
+rosrun face_detector face_detection_video.py
+```
 
 ### face_recognizer  
 recognize human faces with specific names  
