@@ -1,8 +1,8 @@
 # pepper_cv
 Internship at crossing  
   
-##Nodes  
-###face_detector  
+##Nodes
+###face_detector
 detect human faces  
 ###face_recognizer  
 recognize human faces with specific names  
