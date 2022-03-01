@@ -19,7 +19,7 @@ datasets = './src/face_recognizer/scripts/datasets'
 # These are sub data sets of folder,
 # for my faces I've used my name you can
 # change the label here
-#sub_data = 'tianjiao'
+# sub_data = 'tianjiao'
 sub_data = str(raw_input("Enter name: "))
 print(sub_data)
 
@@ -36,57 +36,59 @@ if not os.path.isdir(path):
 face_cascade = cv2.CascadeClassifier(haar_file)
 webcam = cv2.VideoCapture(0)
 
+
 def test():
-	print("test")
+    print("test")
+
 
 class img_capture():
-	def __init__(self):
-		rospy.init_node('img_capture', anonymous=True)
+    def __init__(self):
+        rospy.init_node('img_capture', anonymous=True)
 
-		# What we do during shutdown
-		rospy.on_shutdown(self.cleanup)
+        # What we do during shutdown
+        rospy.on_shutdown(self.cleanup)
 
-		# Create the cv_bridge object
-		self.bridge = CvBridge()
+        # Create the cv_bridge object
+        self.bridge = CvBridge()
 
-		# Subscribe to the camera image and depth topics and set the appropriate callbacks
-		self.image_sub = rospy.Subscriber("/naoqi_driver/camera/front/image_raw", Image, self.image_callback2)
+        # Subscribe to the camera image and depth topics and set the appropriate callbacks
+        self.image_sub = rospy.Subscriber("/naoqi_driver/camera/front/image_raw", Image, self.image_callback2)
 
-		print("Waiting for image topics...")
-		rospy.spin()
+        print("Waiting for image topics...")
+        rospy.spin()
 
-	def cleanup(self):
-		print
-		"Shutting down vision node."
-		cv2.destroyAllWindows()
+    def cleanup(self):
+        print
+        "Shutting down vision node."
+        cv2.destroyAllWindows()
 
-	def image_callback2(self, ros_image):
-		# The program loops until it has 30 images of the face.
-		count = 1
-		while count < 30:
-		# Use cv_bridge() to convert the ROS image to OpenCV format
-			try:
-				im = self.bridge.imgmsg_to_cv2(ros_image, "bgr8")
-				im = np.array(im, dtype=np.uint8)
-			except CvBridgeError, e:
-				print
-				e
+    def image_callback2(self, ros_image):
+        # The program loops until it has 30 images of the face.
+        count = 1
+        while count < 30:
+            # Use cv_bridge() to convert the ROS image to OpenCV format
+            try:
+                im = self.bridge.imgmsg_to_cv2(ros_image, "bgr8")
+                im = np.array(im, dtype=np.uint8)
+            except CvBridgeError, e:
+                print
+                e
 
-			gray = cv2.cvtColor(im, cv2.COLOR_BGR2GRAY)
-			faces = face_cascade.detectMultiScale(gray, 1.3, 4)
-			for (x, y, w, h) in faces:
-				cv2.rectangle(im, (x, y), (x + w, y + h), (255, 0, 0), 2)
-				face = gray[y:y + h, x:x + w]
-				face_resize = cv2.resize(face, (width, height))
-				cv2.imwrite('% s/% s.png' % (path, count), face_resize)
-			count += 1
+            gray = cv2.cvtColor(im, cv2.COLOR_BGR2GRAY)
+            faces = face_cascade.detectMultiScale(gray, 1.3, 4)
+            for (x, y, w, h) in faces:
+                cv2.rectangle(im, (x, y), (x + w, y + h), (255, 0, 0), 2)
+                face = gray[y:y + h, x:x + w]
+                face_resize = cv2.resize(face, (width, height))
+                cv2.imwrite('% s/% s.png' % (path, count), face_resize)
+            count += 1
 
-			cv2.imshow('OpenCV', im)
-			key = cv2.waitKey(10)
-			if key == 27:
-				break
+            cv2.imshow('OpenCV', im)
+            key = cv2.waitKey(10)
+            if key == 27:
+                break
 
 
 if __name__ == '__main__':
-	test()
-        img_capture()
+    test()
+    img_capture()
