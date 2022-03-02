@@ -16,10 +16,18 @@ rosrun face_recognizer face_recog.py
 ```
 
 ### object_detector  
-detect objects (80 classes)  
+Detect objects (80 classes)  
 ```
 rosrun object_detector yolo_obj_detection.py
 ```
+To get the pre-trained weights:
+```
+wget https://pjreddie.com/media/files/yolov3.weights
+```
+**References**  
+https://github.com/arunponnusamy/object-detection-opencv  
+https://www.visiongeek.io/2018/07/yolo-object-detection-opencv-python.html
+
 
 ### photo_collector  
 collect photos of a person for face recognition  
