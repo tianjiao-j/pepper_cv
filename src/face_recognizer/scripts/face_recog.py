@@ -5,7 +5,8 @@ from std_msgs.msg import String
 from sensor_msgs.msg import Image
 from cv_bridge import CvBridge, CvBridgeError
 # It helps in identifying the faces
-import cv2, sys, numpy, os
+import cv2, sys, os
+import numpy as np
 
 
 class face_recog():
@@ -26,8 +27,8 @@ class face_recog():
 
     def image_callback2(self, ros_image):
         size = 4
-        haar_file = './src/face_recognizer/scripts/haarcascade_frontalface_default.xml'
-        datasets = './src/face_recognizer/scripts/datasets'
+        haar_file = './haarcascade_frontalface_default.xml'
+        datasets = './datasets'
 
         # Part 1: Create fisherRecognizer
         print('Recognizing Face Please Be in sufficient Lights...')
@@ -47,7 +48,7 @@ class face_recog():
         (width, height) = (130, 100)
 
         # Create a Numpy array from the two lists above
-        (images, labels) = [numpy.array(lis) for lis in [images, labels]]
+        (images, labels) = [np.array(lis) for lis in [images, labels]]
         # print(images)
 
         # OpenCV trains a model from the images
@@ -59,40 +60,41 @@ class face_recog():
 
         # Part 2: Use fisherRecognizer on camera stream
         face_cascade = cv2.CascadeClassifier(haar_file)
-        webcam = cv2.VideoCapture(0)
-        while True:
-            # Use cv_bridge() to convert the ROS image to OpenCV format
-            try:
-                im = self.bridge.imgmsg_to_cv2(ros_image, "bgr8")
-                im = np.array(im)
-            except CvBridgeError, e:
-                print
-                e
+        # webcam = cv2.VideoCapture(0)
+
+        # while True:
+        # Use cv_bridge() to convert the ROS image to OpenCV format
+        try:
+            im = self.bridge.imgmsg_to_cv2(ros_image, "bgr8")
+            im = np.array(im, dtype=np.uint8)
+        except CvBridgeError, e:
+            print
+            e
             # (_, im) = webcam.read()
-            gray = cv2.cvtColor(im, cv2.COLOR_BGR2GRAY)
-            faces = face_cascade.detectMultiScale(gray, 1.3, 5)
-            for (x, y, w, h) in faces:
-                cv2.rectangle(im, (x, y), (x + w, y + h), (255, 0, 0), 2)
-                face = gray[y:y + h, x:x + w]
-                face_resize = cv2.resize(face, (width, height))
-                # Try to recognize the face
-                prediction = model.predict(face_resize)
-                cv2.rectangle(im, (x, y), (x + w, y + h), (0, 255, 0), 3)
+        gray = cv2.cvtColor(im, cv2.COLOR_BGR2GRAY)
+        faces = face_cascade.detectMultiScale(gray, 1.3, 5)
+        for (x, y, w, h) in faces:
+            cv2.rectangle(im, (x, y), (x + w, y + h), (255, 0, 0), 2)
+            face = gray[y:y + h, x:x + w]
+            face_resize = cv2.resize(face, (width, height))
+            # Try to recognize the face
+            prediction = model.predict(face_resize)
+            cv2.rectangle(im, (x, y), (x + w, y + h), (0, 255, 0), 3)
 
-                if prediction[1] < 500:
+            if prediction[1] < 500:
 
-                    cv2.putText(im, '% s - %.0f' %
-                                (names[prediction[0]], prediction[1]), (x - 10, y - 10),
-                                cv2.FONT_HERSHEY_PLAIN, 1, (0, 255, 0))
-                else:
-                    cv2.putText(im, 'not recognized',
-                                (x - 10, y - 10), cv2.FONT_HERSHEY_PLAIN, 1, (0, 255, 0))
+                cv2.putText(im, '% s - %.0f' %
+                            (names[prediction[0]], prediction[1]), (x - 10, y - 10),
+                            cv2.FONT_HERSHEY_PLAIN, 1, (0, 255, 0))
+            else:
+                cv2.putText(im, 'not recognized',
+                            (x - 10, y - 10), cv2.FONT_HERSHEY_PLAIN, 1, (0, 255, 0))
 
-            cv2.imshow('OpenCV', im)
+        cv2.imshow('OpenCV', im)
 
-            key = cv2.waitKey(10)
-            if key == 27:
-                break
+        key = cv2.waitKey(10)
+        # if key == 27:
+        # break
 
     def cleanup(self):
         print

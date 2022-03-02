@@ -5,16 +5,18 @@ from std_msgs.msg import String
 from sensor_msgs.msg import Image
 from cv_bridge import CvBridge, CvBridgeError
 
+import numpy as np
+
 # Creating database
 # It captures images and stores them in datasets
 # folder under the folder name of sub_data
 import cv2, sys, numpy, os
 
-haar_file = './src/photo_collector/scripts/haarcascade_frontalface_default.xml'
+haar_file = './haarcascade_frontalface_default.xml'
 
 # All the faces data will be
 # present this folder
-datasets = './src/face_recognizer/scripts/datasets'
+datasets = './datasets'
 
 # These are sub data sets of folder,
 # for my faces I've used my name you can
@@ -25,6 +27,7 @@ print(sub_data)
 
 path = os.path.join(datasets, sub_data)
 if not os.path.isdir(path):
+    print("folder does not exist")
     os.mkdir(path)
 
 # defining the size of images
@@ -77,6 +80,7 @@ class img_capture():
             gray = cv2.cvtColor(im, cv2.COLOR_BGR2GRAY)
             faces = face_cascade.detectMultiScale(gray, 1.3, 4)
             for (x, y, w, h) in faces:
+                print('detected')
                 cv2.rectangle(im, (x, y), (x + w, y + h), (255, 0, 0), 2)
                 face = gray[y:y + h, x:x + w]
                 face_resize = cv2.resize(face, (width, height))
